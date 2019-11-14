@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="desc">Footer</div>
+    Ant Design Vue Pro ©2019 Created by GeetTime
   </div>
 </template>
 

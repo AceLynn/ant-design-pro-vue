@@ -16,8 +16,13 @@ import store from "./store";
 
 // 需要安装babel-plugin-import模块
 // 配置babel后按需引入ant模块
-import { Button } from "ant-design-vue";
+import { Button, Layout, Icon, Drawer, Radio } from "ant-design-vue";
+
 Vue.use(Button);
+Vue.use(Layout);
+Vue.use(Icon);
+Vue.use(Drawer);
+Vue.use(Radio);
 
 Vue.config.productionTip = false;
 
