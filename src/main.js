@@ -21,7 +21,16 @@ import Auth from "./directives/auth";
 
 // 需要安装babel-plugin-import模块
 // 配置babel后按需引入ant模块
-import { Button, Layout, Icon, Drawer, Radio, Menu } from "ant-design-vue";
+import {
+  Button,
+  Layout,
+  Icon,
+  Drawer,
+  Radio,
+  Menu,
+  Form,
+  Input
+} from "ant-design-vue";
 
 Vue.use(Button);
 Vue.use(Layout);
@@ -29,6 +38,8 @@ Vue.use(Icon);
 Vue.use(Drawer);
 Vue.use(Radio);
 Vue.use(Menu);
+Vue.use(Form);
+Vue.use(Input);
 
 // 权限校验 全局注册
 Vue.component("Authorized", Authorized);
