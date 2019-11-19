@@ -5,7 +5,7 @@ export function getCureentAuthority() {
   // 用户信息（role）admin应该登录成功后存到vuex里面，每次路由守卫通过vuex里拿role判断是否有访问权限比较好的吧。如果页面刷新没有了vuex里的role，到时候在路由守卫里调接口判断权限。实际开发中应该是这么做的吧。
   // 比对后台返回的权限和meta的权限信息是否匹配
   // return ['admin']
-  return ["user"];
+  return ["admin"];
 }
 
 export function check(authority) {
