@@ -10,6 +10,13 @@
         {{ step.payAccount }}
       </a-form-item>
       <a-form-item
+        label="收款账户"
+        :label-col="formItemLayout.labelCol"
+        :wrapper-col="formItemLayout.wrapperCol"
+      >
+        {{ step.receiveAccount.type }} - {{ step.receiveAccount.number }}
+      </a-form-item>
+      <a-form-item
         label="密 码"
         :label-col="formItemLayout.labelCol"
         :wrapper-col="formItemLayout.wrapperCol"

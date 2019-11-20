@@ -10,7 +10,11 @@ const state = {
   step: {
     // 付款账号
     payAccount: "123456",
-    password: ""
+    password: "",
+    receiveAccount: {
+      type: "alipay",
+      number: ""
+    }
   }
 };
 

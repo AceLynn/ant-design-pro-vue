@@ -29,7 +29,8 @@ import {
   Radio,
   Menu,
   Form,
-  Input
+  Input,
+  Select
 } from "ant-design-vue";
 
 Vue.use(Button);
@@ -40,6 +41,7 @@ Vue.use(Radio);
 Vue.use(Menu);
 Vue.use(Form);
 Vue.use(Input);
+Vue.use(Select);
 
 // 权限校验 全局注册
 Vue.component("Authorized", Authorized);
