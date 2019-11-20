@@ -8,6 +8,19 @@ module.exports = {
       }
     }
   },
+  // 以下用于修改svgloader
+  // 修改后，svg不能作为图片引入，只能作为组件使用
+  // 和<img :src="svg" />方式互斥
+  // chainWebpack: config => {
+  //   const svgRule = config.module.rule("svg");
+
+  //   // 清除已有的所有loader
+  //   // 如果你不这样做，接下来的loader会附加在该规则现有的loader之后
+  //   svgRule.uses.clear();
+
+  //   // 添加要替换的loader
+  //   svgRule.use("vue-svg-loader").loader("vue-svg-loader");
+  // },
   // mock
   devServer: {
     proxy: {

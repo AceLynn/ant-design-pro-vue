@@ -48,6 +48,12 @@ Vue.component("Authorized", Authorized);
 // 注册指令
 Vue.use(Auth);
 
+// 全局注册图标
+const IconFont = Icon.createFromIconfontCN({
+  scriptUrl: "//at.alicdn.com/t/font_1519663_qw81c7pwb2h.js"
+});
+Vue.component("IconFont", IconFont);
+
 Vue.config.productionTip = false;
 
 new Vue({

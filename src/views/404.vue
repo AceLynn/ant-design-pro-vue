@@ -1,18 +1,27 @@
 <template>
   <div style="text-align:center;">
+    <img :src="logoUrl" alt="" />
+    <br />
     <IconFont type="icon-browser-" style="font-size: 100px;" />
+
+    <br />
+    <!-- <Logo /> -->
   </div>
 </template>
 
 <script>
-import { Icon } from "ant-design-vue";
-const IconFont = Icon.createFromIconfontCN({
-  scriptUrl: "//at.alicdn.com/t/font_1519663_qw81c7pwb2h.js"
-});
+// import Logo from "@/assets/moon.svg";
+import logoUrl from "@/assets/moon.svg";
+
 export default {
-  components: {
-    IconFont
+  data() {
+    return {
+      logoUrl
+    };
   }
+  // components: {
+  //   Logo
+  // }
 };
 </script>
 
