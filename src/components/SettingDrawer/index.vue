@@ -11,7 +11,7 @@
       width="300px"
     >
       <template v-slot:handle>
-        <div class="handle" @click="visible = !visible">
+        <div class="setting-drawer-handle" @click="visible = !visible">
           <a-icon :type="visible ? 'close' : 'setting'"></a-icon>
         </div>
       </template>
@@ -64,20 +64,8 @@ export default {
   }
 };
 </script>
+<style lang="less" src="./index.less"></style>
 <style scoped>
-.handle {
-  position: absolute;
-  right: 300px;
-  top: 240px;
-  background: #1890ff;
-  color: #fff;
-  font-size: 20px;
-  width: 48px;
-  height: 48px;
-  border-radius: 3px 0 0 3px;
-  text-align: center;
-  line-height: 48px;
-}
 .radio-box {
   padding-bottom: 20px;
 }

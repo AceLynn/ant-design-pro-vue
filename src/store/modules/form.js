@@ -3,6 +3,7 @@
 
 import router from "../../router";
 import request from "../../utils/request";
+import API from "@/config/api";
 
 // 定义state
 const state = {
@@ -10,7 +11,6 @@ const state = {
   step: {
     // 付款账号
     payAccount: "123456",
-    password: "",
     receiveAccount: {
       type: "alipay",
       number: ""
@@ -23,7 +23,7 @@ const state = {
 const actions = {
   async submitStepForm({ commit }, { payload }) {
     await request({
-      url: "/api/form",
+      url: API.getForm,
       method: "POST",
       data: payload
     });

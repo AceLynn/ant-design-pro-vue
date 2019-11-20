@@ -25,7 +25,7 @@
           v-decorator="[
             'password',
             {
-              initialValue: step.password,
+              initialValue: step.payAccount,
               rules: [
                 {
                   required: true,

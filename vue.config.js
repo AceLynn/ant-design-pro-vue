@@ -1,12 +1,42 @@
+const path = require("path");
+const AntDesignThemePlugin = require("antd-theme-webpack-plugin");
+
+const options = {
+  antDir: path.join(__dirname, "./node_modules/ant-design-vue"),
+  // 样式文件都会打包
+  stylesDir: path.join(__dirname, "./src"),
+  // antd组件库的less变量
+  varFile: path.join(
+    __dirname,
+    "./node_modules/ant-design-vue/lib/style/themes/default.less"
+  ),
+  mainLessFile: "",
+  themeVariables: ["@primary-color"],
+  indexFileName: "index.html",
+  generateOnce: false
+  // lessUrl: "https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js",
+  // publicPath: ""
+};
+const themePlugin = new AntDesignThemePlugin(options);
+
 module.exports = {
   // 解决less的配置
   // config配置可以查看cli的官网
   css: {
     loaderOptions: {
       less: {
+        // 定制主题
+        modifyVars: {
+          "primary-color": "#1DA57A"
+          // "link-color": "#1DA57A",
+          // "border-radius-base": "2px"
+        },
         javascriptEnabled: true
       }
     }
+  },
+  configureWebpack: {
+    plugins: [themePlugin]
   },
   // 以下用于修改svgloader
   // 修改后，svg不能作为图片引入，只能作为组件使用

@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>ant-design</title>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but ant-design doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but ant-design doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <!-- 实际生产环境应该是动态生成 -->
+    <link rel="stylesheet/less" type="text/css" href="/color.less" />
+    <script>
+      window.less = {
+        async: false,
+        env: "production",
+        modifyVars: {
+          "primary-color": "#1DA57A"
+          // "link-color": "#1DA57A",
+          // "border-radius-base": "2px"
+        },
+        javascriptEnabled: true
+      };
+      // 做完这些步骤，less就注入到window全局变量中
+      // 可以通过设置
+      // window.less.modifyVars({"@primary-color": "#369"});
+      // 等方式修改样式
+      // 动态修改样式，性能消耗大
+      // 一般提前做好样式，通过class的修改来更新样式
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"
+    ></script>
+    <!-- 动态生成 -->
   </body>
 </html>

@@ -16,16 +16,16 @@
 export default {
   // 接收账户的组件
   props: {
-    vaule: {
+    // value写成vaule导致传递参数失败
+    // 根据传递的结果来检查变量名是否正确
+    value: {
       type: Object
-      // default: () => {}
     }
   },
   watch: {
     // 通过setFilesValue来同步值，监控实现
     value(val) {
       // value变换时，同步给type和number
-      console.log(val);
       Object.assign(this, val);
     }
   },
