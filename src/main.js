@@ -9,6 +9,12 @@ import Authorized from "./components/Authorized";
 // 注册校验指令也需要先注册
 import Auth from "./directives/auth";
 
+// 注册语言国际化组件
+import VueI18n from "vue-i18n";
+import enUS from "./locale/enUS";
+import zhCN from "./locale/zhCN";
+import queryString from "query-string";
+
 // 这个是全局引入
 // import {Antd} from "ant-design-vue";
 // import 'ant-design-vue/dist/antd.less'
@@ -30,7 +36,10 @@ import {
   Menu,
   Form,
   Input,
-  Select
+  Select,
+  LocaleProvider,
+  Dropdown,
+  DatePicker
 } from "ant-design-vue";
 
 Vue.use(Button);
@@ -42,6 +51,20 @@ Vue.use(Menu);
 Vue.use(Form);
 Vue.use(Input);
 Vue.use(Select);
+Vue.use(LocaleProvider);
+Vue.use(Dropdown);
+Vue.use(DatePicker);
+
+Vue.use(VueI18n);
+const i18n = new VueI18n({
+  // 获取url 使用query-string
+  // 将location.search转为对象
+  locale: queryString.parse(location.search).locale || "zhCN",
+  messages: {
+    zhCN: { message: zhCN },
+    enUS: { message: enUS }
+  }
+});
 
 // 权限校验 全局注册
 Vue.component("Authorized", Authorized);
@@ -57,6 +80,7 @@ Vue.component("IconFont", IconFont);
 Vue.config.productionTip = false;
 
 new Vue({
+  i18n,
   router,
   store,
   render: h => h(App)

@@ -1,6 +1,8 @@
 <template>
   <div>
     <h1>分析页</h1>
+    {{ $t("message")["app.dashboard.analysis.timeLabel"] }} :
+    <a-date-picker></a-date-picker>
     <ECharts :option="chartOption" style="height: 400px" />
   </div>
 </template>
