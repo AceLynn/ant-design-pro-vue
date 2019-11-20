@@ -23,6 +23,7 @@ module.exports = {
             // req=拦截到的请求的url路径
             // name = mock请求文件的名字
             // 比如 dashboard_chart
+            // let path = req.path || "";
             const name = req.path
               .split("/api/")[1]
               .split("/")

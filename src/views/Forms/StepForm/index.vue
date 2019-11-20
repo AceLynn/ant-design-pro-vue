@@ -1,6 +1,6 @@
 <template>
   <div>
-    step Page
+    <!-- step Page -->
     <router-view></router-view>
   </div>
 </template>
