@@ -3,8 +3,12 @@
 </template>
 
 <script>
-// 引入插件
-import echarts from "echarts";
+// 引入插件 这种会全部引入
+// import echarts from "echarts";
+// 按需引入echart,核心包+柱状图包+title包
+import echarts from "echarts/lib/echarts";
+import "echarts/lib/chart/bar";
+import "echarts/lib/component/title";
 // 引入监听dom加载完成插件
 import { addListener, removeListener } from "resize-detector";
 // 延迟触发插件，避免频繁事件多次触发

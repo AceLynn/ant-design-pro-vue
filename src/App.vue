@@ -9,6 +9,8 @@
 import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
 import enUS from "ant-design-vue/lib/locale-provider/en_US";
 import moment from "moment";
+// vue.config.js中配置忽略语言包后，需要手动引入；默认带enUS，不需要引入
+import "moment/locale/zh-cn";
 
 export default {
   data() {

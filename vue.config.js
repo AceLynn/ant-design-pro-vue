@@ -1,5 +1,6 @@
 const path = require("path");
 const AntDesignThemePlugin = require("antd-theme-webpack-plugin");
+const webpack = require("webpack");
 
 const options = {
   antDir: path.join(__dirname, "./node_modules/ant-design-vue"),
@@ -36,7 +37,17 @@ module.exports = {
     }
   },
   configureWebpack: {
-    plugins: [themePlugin]
+    plugins: [
+      themePlugin,
+      // 打包时忽略moment的语言包，但需要用到时，需要手动引入需要的语言包
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    ],
+    // antd icons按需加载
+    resolve: {
+      alias: {
+        "@ant-design/icons/lib/dist$": path.resolve(__dirname, "./src/icons.js")
+      }
+    }
   },
   // 以下用于修改svgloader
   // 修改后，svg不能作为图片引入，只能作为组件使用

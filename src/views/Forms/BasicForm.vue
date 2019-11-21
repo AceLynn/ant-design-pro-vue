@@ -126,7 +126,7 @@ export default {
     handleSubmit() {
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log(values);
+          // console.log(values);
           // 如果数据校验通过，提交后台啦
           // 可以开始同步数据
           // this.fieldA = values.fieldA;
