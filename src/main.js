@@ -15,6 +15,11 @@ import enUS from "./locale/enUS";
 import zhCN from "./locale/zhCN";
 import queryString from "query-string";
 
+// 加载代码高亮插件
+import VueHighLight from "vue-highlightjs";
+// 高亮样式
+import "highlight.js/styles/github.css";
+
 // 这个是全局引入
 // import {Antd} from "ant-design-vue";
 // import 'ant-design-vue/dist/antd.less'
@@ -56,6 +61,7 @@ Vue.use(Dropdown);
 Vue.use(DatePicker);
 
 Vue.use(VueI18n);
+Vue.use(VueHighLight);
 const i18n = new VueI18n({
   // 获取url 使用query-string
   // 将location.search转为对象

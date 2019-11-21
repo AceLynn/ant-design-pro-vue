@@ -4,11 +4,17 @@
     {{ $t("message")["app.dashboard.analysis.timeLabel"] }} :
     <a-date-picker></a-date-picker>
     <ECharts :option="chartOption" style="height: 400px" />
+    <!-- If you want to highlight hardcoded source-code -->
+    <h2>echarts组件的代码</h2>
+    <pre v-highlightjs="echartCode"><code class="html"></code></pre>
   </div>
 </template>
 
 <script>
 import ECharts from "../../components/EChats";
+// 加载echart组件代码用于演示
+// eslint-disable-next-line no-unused-vars
+import echartCode from "!!raw-loader!../../components/EChats";
 // import random from "lodash/random";
 // import axios from "axios";
 // api config
@@ -18,6 +24,7 @@ import request from "../../utils/request";
 export default {
   data() {
     return {
+      echartCode,
       chartOption: {
         title: {
           text: "ECharts 入门示例"
